@@ -10,8 +10,8 @@ GPIO.setwarnings(False)
 GPIO.setup(4, GPIO.IN)
 GPIO.setup(17, GPIO.IN)
 
-deviceId = "DKzb3KQC"
-deviceKey = "ehgRcyMw0Eva6p1K" 
+deviceId = "DH0ZnDBP"
+deviceKey = "BxBl0Lvt0cSAcAfd" 
 
 def post_to_mcs(payload): 
         headers = {"Content-type": "application/json", "deviceKey": deviceKey} 
