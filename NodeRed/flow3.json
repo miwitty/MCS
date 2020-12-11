@@ -1,0 +1,183 @@
+[
+    {
+        "id": "fd8e8225.6a172",
+        "type": "tab",
+        "label": "flow3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6864f9e4.8d6cf8",
+        "type": "inject",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "2ce872d5.14846e"
+            ]
+        ]
+    },
+    {
+        "id": "2ce872d5.14846e",
+        "type": "function",
+        "z": "fd8e8225.6a172",
+        "name": "Payload",
+        "func": "msg.headers={\n    deviceKey: \"BxBl0Lvt0cSAcAfd\"\n    };\nmsg.payload= \"Temperature,,30.3\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "55c13891.2d16b8"
+            ]
+        ]
+    },
+    {
+        "id": "55c13891.2d16b8",
+        "type": "http request",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "https://api.mediatek.com/mcs/v2/devices/DH0ZnDBP/datapoints.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "aa884ff4.f5a34",
+                "d820c6a3.d86588"
+            ]
+        ]
+    },
+    {
+        "id": "aa884ff4.f5a34",
+        "type": "http response",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d820c6a3.d86588",
+        "type": "debug",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 640,
+        "y": 340,
+        "wires": []
+    }
+][
+    {
+        "id": "fd8e8225.6a172",
+        "type": "tab",
+        "label": "flow3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6864f9e4.8d6cf8",
+        "type": "inject",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "2ce872d5.14846e"
+            ]
+        ]
+    },
+    {
+        "id": "2ce872d5.14846e",
+        "type": "function",
+        "z": "fd8e8225.6a172",
+        "name": "Payload",
+        "func": "msg.headers={\n    deviceKey: \"BxBl0Lvt0cSAcAfd\"\n    };\nmsg.payload= \"Temperature,,30.3\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "55c13891.2d16b8"
+            ]
+        ]
+    },
+    {
+        "id": "55c13891.2d16b8",
+        "type": "http request",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "https://api.mediatek.com/mcs/v2/devices/DH0ZnDBP/datapoints.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "aa884ff4.f5a34",
+                "d820c6a3.d86588"
+            ]
+        ]
+    },
+    {
+        "id": "aa884ff4.f5a34",
+        "type": "http response",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d820c6a3.d86588",
+        "type": "debug",
+        "z": "fd8e8225.6a172",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 640,
+        "y": 340,
+        "wires": []
+    }
+]
