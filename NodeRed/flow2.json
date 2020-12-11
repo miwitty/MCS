@@ -1,0 +1,92 @@
+[
+    {
+        "id": "be966b8.ca91398",
+        "type": "tab",
+        "label": "flow2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "844048e0.ecb558",
+        "type": "inject",
+        "z": "be966b8.ca91398",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "f12b1af7.324408"
+            ]
+        ]
+    },
+    {
+        "id": "f12b1af7.324408",
+        "type": "function",
+        "z": "be966b8.ca91398",
+        "name": "Payload",
+        "func": "msg.headers={\n    deviceKey: \"BxBl0Lvt0cSAcAfd\"\n    };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "aef21694.bd0d28"
+            ]
+        ]
+    },
+    {
+        "id": "aef21694.bd0d28",
+        "type": "http request",
+        "z": "be966b8.ca91398",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://api.mediatek.com/mcs/v2/devices/DH0ZnDBP/datachannels/LEDControl/datapoints.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "eeb35f29.d635",
+                "67f6f09f.ef451"
+            ]
+        ]
+    },
+    {
+        "id": "eeb35f29.d635",
+        "type": "http response",
+        "z": "be966b8.ca91398",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "67f6f09f.ef451",
+        "type": "debug",
+        "z": "be966b8.ca91398",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 580,
+        "y": 340,
+        "wires": []
+    }
+]
